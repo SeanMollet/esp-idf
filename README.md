@@ -7,13 +7,16 @@
 
 1. Replace your tools.json and idf_tools.py with versions that know what macos-arm64 is.
 
-`cd ~/esp/esp-idf/tools
-`wget https://github.com/SeanMollet/esp-idf/raw/esp-2020r3-aarch64/tools/tools.json
-`wget https://github.com/SeanMollet/esp-idf/raw/esp-2020r3-aarch64/tools/idf_tools.py
-
+```
+cd ~/esp/esp-idf/tools
+wget https://github.com/SeanMollet/esp-idf/raw/esp-2020r3-aarch64/tools/tools.json
+wget https://github.com/SeanMollet/esp-idf/raw/esp-2020r3-aarch64/tools/idf_tools.py
+```
 2. Run esp install.sh again
 
-`~/esp/esp-idf/install.sh
+```
+~/esp/esp-idf/install.sh
+```
 
 3. Enjoy your crazy fast build performance.
 
@@ -35,36 +38,50 @@ Follow espressif's instructions to set up a case sensitive disk image on which t
 
 Clone my repo and checkout the proper branch:
 
-`git clone https://github.com/SeanMollet/crosstool-NG
-`cd crosstool-NG
-`git checkout esp-2020r3-aarch64
+```
+git clone https://github.com/SeanMollet/crosstool-NG
+cd crosstool-NG
+git checkout esp-2020r3-aarch64
+```
 
 Clone the submodule:
-`git submodule update --init --recursive
-
+```
+git submodule update --init --recursive
+```
 
 Set the path so it can find the "binutils"
-`export PATH=/opt/homebrew/opt/binutils/bin:$PATH
+```
+export PATH=/opt/homebrew/opt/binutils/bin:$PATH
+```
 
 Needed for building cross-tool
-`export LDFLAGS="-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/gettext/lib"
-`export CPPFLAGS="-I/opt/homebrew/opt/ncurses/include -I/opt/homebrew/opt/gettext/include"
-`export PKG_CONFIG_PATH="/opt/homebrew/opt/ncurses/lib/pkgconfig"
-
+```
+export LDFLAGS="-L/opt/homebrew/opt/ncurses/lib -L/opt/homebrew/opt/gettext/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ncurses/include -I/opt/homebrew/opt/gettext/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/ncurses/lib/pkgconfig"
+```
 
 Build crosstool-ng:
-`./bootstrap
-`./configure --enable-local
-`make
+```
+./bootstrap
+./configure --enable-local
+make
+```
 
 Configure for xtensa
-`./ct-ng xtensa-esp32-elf
+```
+./ct-ng xtensa-esp32-elf
+```
 
 Edit .config and change the following setting:
-`CT_GDB_CROSS_EXTRA_CONFIG_ARRAY="--disable-tui"
+```
+CT_GDB_CROSS_EXTRA_CONFIG_ARRAY="--disable-tui"
+```
 
 Build it.. takes about 15 minutes
-`./ct-ng build
+```
+./ct-ng build
+```
 
 
 * [中文版](./README_CN.md)

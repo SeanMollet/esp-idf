@@ -1,9 +1,9 @@
 # Espressif IoT Development Framework
 
 
-# Sean Mollet's M1 build:
+## Sean Mollet's M1 build:
 
-## To install and use my builds:
+### To install and use my builds:
 
 1. Replace your tools.json and idf_tools.py with versions that know what macos-arm64 is.
 
@@ -21,10 +21,10 @@ wget https://github.com/SeanMollet/esp-idf/raw/esp-2020r3-aarch64/tools/idf_tool
 3. Enjoy your crazy fast build performance.
 
 
-Note: I did nfot go to the trouble of building openocd or the ulp binutils for M1. They're both low cpu utilities and work just fine with rosetta2. The gcc toolchain though was worth the effort. It's MUCH faster running native.
+Note: I did not go to the trouble of building openocd or the ulp binutils for M1. They're both low cpu utilities and work just fine with rosetta2. The gcc toolchain though was worth the effort. It's MUCH faster running native.
 
 
-## Duplicating my build:
+### Duplicating my build:
 Follow espressif's instructions for installing homebrew items.
 Then, clone my repo of "fixes" for the currently broken arm binutils:
 

@@ -24,6 +24,11 @@ wget https://github.com/SeanMollet/esp-idf/raw/esp-2020r3-aarch64/tools/idf_tool
 Note: I did not go to the trouble of building openocd or the ulp binutils for M1. They're both low cpu utilities and work just fine with rosetta2. The gcc toolchain though was worth the effort. It's MUCH faster running native.
 
 
+### For VSCode users, download and install the following extension:
+
+https://github.com/SeanMollet/vscode-esp-idf-extension/releases/tag/macos_arm64
+
+
 ### Duplicating my build:
 Follow espressif's instructions for installing homebrew items.
 Then, clone my repo of "fixes" for the currently broken arm binutils:
